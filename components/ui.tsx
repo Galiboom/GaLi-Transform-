@@ -2,20 +2,14 @@ import Link from 'next/link';
 import { cn } from '@/lib/utils';
 
 export function Shell({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="min-h-screen bg-bg text-text">
-      <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_top_left,rgba(159,231,245,0.12),transparent_30%),radial-gradient(circle_at_85%_20%,rgba(245,233,208,0.09),transparent_28%)]" />
-      <div className="pointer-events-none fixed inset-0 bg-texture bg-[size:22px_22px] opacity-[0.08]" />
-      <div className="relative">{children}</div>
-    </div>
-  );
+  return <div className="min-h-screen bg-slate-100 text-slate-900">{children}</div>;
 }
 
 export function Glass({ className, children }: { className?: string; children: React.ReactNode }) {
   return (
     <div
       className={cn(
-        'rounded-lg border border-line bg-panel/90 shadow-glass backdrop-blur-[18px]',
+        'rounded-[28px] border border-white/70 bg-white/80 shadow-[0_18px_50px_rgba(15,23,42,0.06)] backdrop-blur-xl',
         className,
       )}
     >
@@ -34,7 +28,7 @@ export function Button({
   children: React.ReactNode;
 }) {
   const base =
-    'inline-flex items-center justify-center gap-2 rounded-lg border border-line bg-white/6 px-3 py-2 text-sm font-medium text-text transition hover:bg-white/10';
+    'inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-slate-700 shadow-sm transition hover:border-blue-200 hover:bg-slate-50';
   if (asChild) {
     return <Link className={cn(base, className)} href="#">{children}</Link>;
   }
@@ -43,7 +37,7 @@ export function Button({
 
 export function Tag({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-flex items-center rounded-full border border-line bg-white/5 px-2.5 py-1 text-[11px] uppercase tracking-[0.12em] text-muted">
+    <span className="inline-flex items-center rounded-full border border-blue-100 bg-blue-50 px-2.5 py-1 text-[11px] font-medium uppercase tracking-[0.08em] text-blue-700">
       {children}
     </span>
   );

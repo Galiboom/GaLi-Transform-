@@ -127,6 +127,15 @@ export const tools: ToolSpec[] = [
 
 export const toolsByGroup = Array.from(new Set(tools.map((tool) => tool.group)));
 
+export const quickTools = [
+  'qr-decode',
+  'qr-encode',
+  'md-pdf',
+  'pdf-docx',
+  'image-convert',
+  'mp4-mp3',
+] as const;
+
 export function getToolById(toolId: string) {
   return tools.find((tool) => tool.id === toolId) ?? null;
 }

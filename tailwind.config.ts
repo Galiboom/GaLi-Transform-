@@ -1,27 +1,27 @@
-import type { Config } from 'tailwindcss';
+﻿import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: ['./app/**/*.{ts,tsx}', './components/**/*.{ts,tsx}', './lib/**/*.{ts,tsx}'],
   theme: {
     extend: {
       colors: {
-        bg: '#070B14',
-        panel: 'rgba(12, 18, 31, 0.72)',
-        panelSoft: 'rgba(20, 28, 46, 0.52)',
-        line: 'rgba(190, 210, 235, 0.14)',
-        text: '#EAF0F8',
-        muted: '#93A4BA',
-        accent: '#9FE7F5',
-        accent2: '#F5E9D0',
-        danger: '#FF7B82',
-        success: '#8EE3B8',
+        bg: '#f3f6fb',
+        panel: '#ffffff',
+        panelSoft: '#f8fafc',
+        line: '#e2e8f0',
+        text: '#0f172a',
+        muted: '#64748b',
+        accent: '#2563eb',
+        accent2: '#0f766e',
+        danger: '#e11d48',
+        success: '#059669',
       },
       boxShadow: {
-        glass: '0 18px 60px rgba(0, 0, 0, 0.35)',
+        glass: '0 10px 28px rgba(15, 23, 42, 0.06)',
       },
       backgroundImage: {
         texture:
-          'linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)',
+          'linear-gradient(rgba(15,23,42,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(15,23,42,0.03) 1px, transparent 1px)',
       },
     },
   },
