@@ -22,7 +22,10 @@ export default function HomePage() {
             <div className="text-sm text-muted">上传、转换、下载，一条线完成。</div>
           </div>
           <div className="flex items-center gap-2">
-            <Link href="/jobs" className="inline-flex items-center gap-2 rounded-lg border border-line bg-white/5 px-3 py-2 text-sm font-medium transition hover:bg-white/10">
+            <Link
+              href="/jobs"
+              className="inline-flex items-center gap-2 rounded-lg border border-line bg-white/5 px-3 py-2 text-sm font-medium transition hover:bg-white/10"
+            >
               <ArrowRight className="h-4 w-4" />
               任务状态
             </Link>

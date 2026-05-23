@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import { ArrowLeft, Download, FileUp, PanelTopOpen, Sparkles } from 'lucide-react';
 import { Button, Glass, Shell, Tag } from '@/components/ui';
-import { tools } from '@/lib/tools';
+import { getToolById } from '@/lib/tools';
 
 export default function ToolPage({ params }: { params: { toolId: string } }) {
-  const tool = tools.find((item) => item.id === params.toolId);
+  const tool = getToolById(params.toolId);
 
   if (!tool) {
     return (
@@ -14,10 +14,10 @@ export default function ToolPage({ params }: { params: { toolId: string } }) {
             <div className="text-lg font-semibold">工具不存在</div>
             <div className="mt-2 text-sm text-muted">这个工作台还没有对应的转换能力。</div>
             <div className="mt-4">
-              <Button>
+              <Link href="/" className="inline-flex items-center gap-2 rounded-lg border border-line bg-white/5 px-3 py-2 text-sm font-medium transition hover:bg-white/10">
                 <ArrowLeft className="h-4 w-4" />
                 返回首页
-              </Button>
+              </Link>
             </div>
           </Glass>
         </main>

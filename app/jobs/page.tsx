@@ -40,7 +40,7 @@ export default function JobsPage() {
                 <div key={job.id} className="rounded-lg border border-line bg-white/5 p-4">
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <div>
-                      <div className="text-sm font-medium">{job.tool}</div>
+                      <div className="text-sm font-medium">{job.toolName}</div>
                       <div className="mt-1 text-sm text-muted">
                         {job.fileName} · {job.id}
                       </div>
@@ -50,15 +50,38 @@ export default function JobsPage() {
                       {meta.label}
                     </div>
                   </div>
+
                   <div className="mt-3 h-2 rounded-full bg-white/8">
                     <div className="h-2 rounded-full bg-accent" style={{ width: `${job.progress}%` }} />
                   </div>
+
                   <div className="mt-2 flex flex-wrap items-center justify-between gap-2 text-sm text-muted">
                     <span>进度 {job.progress}%</span>
-                    <span>{job.updatedAt}</span>
+                    <span>更新时间 {job.updatedAt}</span>
                   </div>
+
+                  <div className="mt-3 grid gap-2 text-sm md:grid-cols-3">
+                    <div className="rounded-md border border-line bg-white/5 px-3 py-2 text-muted">
+                      创建时间：{job.createdAt}
+                    </div>
+                    <div className="rounded-md border border-line bg-white/5 px-3 py-2 text-muted">
+                      过期时间：{job.expiresAt}
+                    </div>
+                    <div className="rounded-md border border-line bg-white/5 px-3 py-2 text-muted">
+                      工具：{job.toolId}
+                    </div>
+                  </div>
+
                   {job.message ? <div className="mt-3 text-sm text-danger">{job.message}</div> : null}
-                  {job.result ? <div className="mt-3 text-sm text-success">结果文件：{job.result}</div> : null}
+                  {job.resultFileName ? (
+                    <div className="mt-3 text-sm text-success">
+                      结果文件：{job.resultFileName}
+                      {job.resultSize ? ` · ${job.resultSize}` : ''}
+                    </div>
+                  ) : null}
+                  {job.downloadId ? (
+                    <div className="mt-2 text-sm text-muted">下载 ID：{job.downloadId}</div>
+                  ) : null}
                 </div>
               );
             })}
